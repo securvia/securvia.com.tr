@@ -48,14 +48,14 @@ img {
 }
 
 .btn-primary {
-  background: #e63946;
+  background: #C4952A;
   color: #fff;
-  border-color: #e63946;
+  border-color: #C4952A;
 }
 
 .btn-primary:hover {
-  background: #c1121f;
-  border-color: #c1121f;
+  background: #A07820;
+  border-color: #A07820;
 }
 
 .btn-outline {
@@ -130,7 +130,7 @@ img {
 .logo-sec {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #e63946;
+  color: #C4952A;
   letter-spacing: 2px;
 }
 
@@ -155,11 +155,11 @@ img {
 }
 
 .nav-links a:hover {
-  color: #e63946;
+  color: #C4952A;
 }
 
 .nav-phone {
-  background: #e63946;
+  background: #C4952A;
   color: #fff !important;
   padding: 0.5rem 1.1rem;
   border-radius: 6px;
@@ -168,7 +168,7 @@ img {
 }
 
 .nav-phone:hover {
-  background: #c1121f;
+  background: #A07820;
 }
 
 .menu-toggle {
@@ -220,7 +220,7 @@ img {
 }
 
 .hero-text h1 span {
-  color: #e63946;
+  color: #C4952A;
 }
 
 .hero-text p {
@@ -244,7 +244,7 @@ img {
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #e63946, #c1121f);
+  background: linear-gradient(135deg, #C4952A, #A07820);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -306,7 +306,7 @@ img {
   padding: 2rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   transition: transform 0.2s, box-shadow 0.2s;
-  border-top: 4px solid #e63946;
+  border-top: 4px solid #C4952A;
 }
 
 .service-card:hover {
@@ -389,7 +389,7 @@ img {
   display: block;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #e63946;
+  color: #C4952A;
   line-height: 1;
   margin-bottom: 0.3rem;
 }
@@ -507,7 +507,7 @@ img {
 }
 
 .contact-item a:hover {
-  color: #e63946;
+  color: #C4952A;
 }
 
 .cta-box {
@@ -521,7 +521,7 @@ img {
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 0.8rem;
-  color: #e63946;
+  color: #C4952A;
 }
 
 .cta-box p {
@@ -569,7 +569,7 @@ img {
 }
 
 .footer-links a:hover {
-  color: #e63946;
+  color: #C4952A;
 }
 
 .footer-bottom {
