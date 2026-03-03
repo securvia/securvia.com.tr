@@ -122,8 +122,9 @@ img {
 }
 
 .logo-img {
-  height: 85px;
+  height: 60px;
   width: auto;
+  max-width: 220px;
   object-fit: contain;
 }
 
@@ -189,6 +190,25 @@ img {
   align-items: center;
   position: relative;
   overflow: hidden;
+}
+
+.hero-bg-shield {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: auto;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-slogan {
+  margin-top: 1.5rem;
+  height: 40px;
+  width: auto;
+  opacity: 0.9;
 }
 
 .hero::before {
