@@ -122,9 +122,9 @@ img {
 }
 
 .logo-img {
-  height: 270px;
+  height: 75px;
   width: auto;
-  max-width: 990px;
+  max-width: 320px;
   object-fit: contain;
 }
 
@@ -184,7 +184,7 @@ img {
 /* ===== HERO ===== */
 .hero {
   background: linear-gradient(135deg, #0a0a1e 0%, #1a1a3e 50%, #0d1b2a 100%);
-  padding: 13rem 0 5rem;
+  padding: 8rem 0 5rem;
   min-height: 100vh;
   display: flex;
   align-items: center;
