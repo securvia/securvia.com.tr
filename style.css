@@ -256,8 +256,18 @@ img {
   flex-wrap: wrap;
 }
 
-.hero-badge {
+.hero-visual {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo-img {
+  width: 280px;
+  height: auto;
+  opacity: 0.92;
+  filter: drop-shadow(0 0 30px rgba(196, 149, 42, 0.3));
 }
 
 .badge-circle {
