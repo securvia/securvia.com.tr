@@ -827,6 +827,99 @@ img {
   font-size: 0.82rem;
 }
 
+/* ===== HEMEN TEKLİF AL ===== */
+.teklif {
+  background: #f7f8fa;
+  padding: 5rem 0;
+}
+
+.teklif-box {
+  max-width: 680px;
+  margin: 2.5rem auto 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2.8rem;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+}
+
+.teklif-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.teklif-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.2rem;
+}
+
+.teklif-field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.req {
+  color: #C4952A;
+}
+
+.teklif-field input,
+.teklif-field select,
+.teklif-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #dde1e9;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  background: #fafbfc;
+  transition: border-color 0.2s;
+  outline: none;
+  resize: vertical;
+}
+
+.teklif-field input:focus,
+.teklif-field select:focus,
+.teklif-field textarea:focus {
+  border-color: #C4952A;
+  background: #fff;
+}
+
+.teklif-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.teklif-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.btn-email {
+  background: #1a73e8;
+  color: #fff;
+  border-color: #1a73e8;
+}
+
+.btn-email:hover {
+  background: #1558b0;
+  border-color: #1558b0;
+}
+
+.teklif-note {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 1rem;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .hero-text h1 {
@@ -894,6 +987,18 @@ img {
 
   .section-title {
     font-size: 1.6rem;
+  }
+
+  .teklif-box {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .teklif-row {
+    grid-template-columns: 1fr;
+  }
+
+  .teklif-btns {
+    flex-direction: column;
   }
 
   .footer-inner {

@@ -63,6 +63,7 @@
         <li><a href="#hakkimizda">Hakkımızda</a></li>
         <li><a href="#neden-biz">Neden Biz?</a></li>
         <li><a href="#markalar">Markalar</a></li>
+        <li><a href="#teklif">Teklif Al</a></li>
         <li><a href="#iletisim">İletişim</a></li>
         <li><a href="tel:05533108840" class="nav-phone">0553 310 88 40</a></li>
       </ul>
@@ -272,6 +273,53 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- HEMEN TEKLİF AL -->
+  <section class="teklif" id="teklif">
+    <div class="container">
+      <h2 class="section-title">Hemen Teklif Al</h2>
+      <p class="section-sub">Formu doldurun, WhatsApp veya e-posta ile gönderin. En kısa sürede size dönelim.</p>
+      <div class="teklif-box">
+        <form id="teklifForm" novalidate>
+          <div class="teklif-row">
+            <div class="teklif-field">
+              <label for="teklif-ad">Ad Soyad <span class="req">*</span></label>
+              <input type="text" id="teklif-ad" placeholder="Adınız ve soyadınız" />
+            </div>
+            <div class="teklif-field">
+              <label for="teklif-tel">Telefon <span class="req">*</span></label>
+              <input type="tel" id="teklif-tel" placeholder="05XX XXX XX XX" />
+            </div>
+          </div>
+          <div class="teklif-field">
+            <label for="teklif-hizmet">Hizmet</label>
+            <select id="teklif-hizmet">
+              <option value="">— Seçiniz —</option>
+              <option>Güvenlik Kamera Sistemi</option>
+              <option>Görüntülü Diyafon</option>
+              <option>Alarm Sistemi</option>
+              <option>Network / İnternet Altyapısı</option>
+              <option>Bakım / Arıza Tespiti</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+          <div class="teklif-field">
+            <label for="teklif-mesaj">Mesaj</label>
+            <textarea id="teklif-mesaj" rows="4" placeholder="İhtiyacınızı kısaca anlatın..."></textarea>
+          </div>
+          <div class="teklif-btns">
+            <button type="button" class="btn btn-whatsapp teklif-btn" onclick="gonderWhatsapp()">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Gönder
+            </button>
+            <button type="button" class="btn btn-email teklif-btn" onclick="gonderEmail()">
+              <i class="fa-solid fa-envelope"></i> E-posta ile Gönder
+            </button>
+          </div>
+          <p class="teklif-note"><span class="req">*</span> İşaretli alanlar zorunludur.</p>
+        </form>
       </div>
     </div>
   </section>
