@@ -280,45 +280,60 @@
   <!-- HEMEN TEKLİF AL -->
   <section class="teklif" id="teklif">
     <div class="container">
-      <h2 class="section-title">Hemen Teklif Al</h2>
-      <p class="section-sub">Formu doldurun, WhatsApp veya e-posta ile gönderin. En kısa sürede size dönelim.</p>
-      <div class="teklif-box">
+      <div class="teklif-header">
+        <span class="teklif-badge"><i class="fa-solid fa-file-invoice"></i> Ücretsiz Teklif</span>
+        <h2>Hemen Teklif Alın</h2>
+        <p>Formu doldurun, WhatsApp veya e-posta ile gönderin.<br/>Uzman ekibimiz en kısa sürede size dönüş yapsın.</p>
+      </div>
+      <div class="teklif-card">
         <form id="teklifForm" novalidate>
           <div class="teklif-row">
             <div class="teklif-field">
               <label for="teklif-ad">Ad Soyad <span class="req">*</span></label>
-              <input type="text" id="teklif-ad" placeholder="Adınız ve soyadınız" />
+              <div class="input-wrap">
+                <i class="fa-solid fa-user input-icon"></i>
+                <input type="text" id="teklif-ad" placeholder="Adınız ve soyadınız" />
+              </div>
             </div>
             <div class="teklif-field">
               <label for="teklif-tel">Telefon <span class="req">*</span></label>
-              <input type="tel" id="teklif-tel" placeholder="05XX XXX XX XX" />
+              <div class="input-wrap">
+                <i class="fa-solid fa-phone input-icon"></i>
+                <input type="tel" id="teklif-tel" placeholder="05XX XXX XX XX" />
+              </div>
             </div>
           </div>
           <div class="teklif-field">
-            <label for="teklif-hizmet">Hizmet</label>
-            <select id="teklif-hizmet">
-              <option value="">— Seçiniz —</option>
-              <option>Güvenlik Kamera Sistemi</option>
-              <option>Görüntülü Diyafon</option>
-              <option>Alarm Sistemi</option>
-              <option>Network / İnternet Altyapısı</option>
-              <option>Bakım / Arıza Tespiti</option>
-              <option>Diğer</option>
-            </select>
+            <label for="teklif-hizmet">Hizmet Türü</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-shield-halved input-icon"></i>
+              <select id="teklif-hizmet">
+                <option value="">— Seçiniz —</option>
+                <option>Güvenlik Kamera Sistemi</option>
+                <option>Görüntülü Diyafon</option>
+                <option>Alarm Sistemi</option>
+                <option>Network / İnternet Altyapısı</option>
+                <option>Bakım / Arıza Tespiti</option>
+                <option>Diğer</option>
+              </select>
+            </div>
           </div>
           <div class="teklif-field">
-            <label for="teklif-mesaj">Mesaj</label>
-            <textarea id="teklif-mesaj" rows="4" placeholder="İhtiyacınızı kısaca anlatın..."></textarea>
+            <label for="teklif-mesaj">Mesajınız</label>
+            <div class="input-wrap">
+              <i class="fa-solid fa-comment-dots input-icon input-icon-top"></i>
+              <textarea id="teklif-mesaj" rows="4" placeholder="İhtiyacınızı kısaca anlatın..."></textarea>
+            </div>
           </div>
           <div class="teklif-btns">
-            <button type="button" class="btn btn-whatsapp teklif-btn" onclick="gonderWhatsapp()">
+            <button type="button" class="teklif-btn-wa" onclick="gonderWhatsapp()">
               <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Gönder
             </button>
-            <button type="button" class="btn btn-email teklif-btn" onclick="gonderEmail()">
+            <button type="button" class="teklif-btn-mail" onclick="gonderEmail()">
               <i class="fa-solid fa-envelope"></i> E-posta ile Gönder
             </button>
           </div>
-          <p class="teklif-note"><span class="req">*</span> İşaretli alanlar zorunludur.</p>
+          <p class="teklif-note"><i class="fa-solid fa-lock"></i> Bilgileriniz yalnızca teklif amacıyla kullanılır. <span class="req">*</span> Zorunlu alan.</p>
         </form>
       </div>
     </div>
