@@ -477,6 +477,36 @@ img {
   font-weight: 500;
 }
 
+.about-footer {
+  margin-top: 2.5rem;
+}
+
+.about-mission {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-style: italic;
+  max-width: 780px;
+  margin: 0 auto 1.5rem;
+}
+
+.about-region {
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a2e, #0d1b2a);
+  color: #b0b8c8;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  border-left: 4px solid #C4952A;
+}
+
+.about-region i {
+  color: #C4952A;
+  margin-right: 0.5rem;
+}
+
 /* ===== WHY ===== */
 .why {
   padding: 5rem 0;
