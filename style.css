@@ -122,9 +122,9 @@ img {
 }
 
 .logo-img {
-  height: 75px;
+  height: 38px;
   width: auto;
-  max-width: 320px;
+  max-width: 160px;
   object-fit: contain;
 }
 
