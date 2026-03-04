@@ -122,9 +122,9 @@ img {
 }
 
 .logo-img {
-  height: 38px;
+  height: 60px;
   width: auto;
-  max-width: 160px;
+  max-width: 260px;
   object-fit: contain;
 }
 
@@ -267,7 +267,7 @@ img {
 }
 
 .hero-logo-img {
-  width: 840px;
+  width: 500px;
   height: auto;
   opacity: 0.92;
   filter: drop-shadow(0 0 30px rgba(196, 149, 42, 0.3));
