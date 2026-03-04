@@ -122,9 +122,9 @@ img {
 }
 
 .logo-img {
-  height: 120px;
+  height: 180px;
   width: auto;
-  max-width: 440px;
+  max-width: 660px;
   object-fit: contain;
 }
 
@@ -220,11 +220,13 @@ img {
 
 .hero-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+  justify-content: center;
+  gap: 2rem;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .hero-text {
@@ -254,6 +256,7 @@ img {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-visual {
@@ -264,7 +267,7 @@ img {
 }
 
 .hero-logo-img {
-  width: 560px;
+  width: 840px;
   height: auto;
   opacity: 0.92;
   filter: drop-shadow(0 0 30px rgba(196, 149, 42, 0.3));
