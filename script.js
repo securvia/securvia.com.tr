@@ -40,6 +40,53 @@ document.querySelectorAll('.service-card, .why-card, .stat').forEach(el => {
   observer.observe(el);
 });
 
+// Hero Carousel
+(function() {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+  if (!slides.length || !dotsContainer) return;
+
+  let current = 0;
+  let interval;
+
+  // Dot'ları oluştur
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+  }
+
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+
+  function startAutoplay() {
+    interval = setInterval(next, 3500);
+  }
+
+  function stopAutoplay() {
+    clearInterval(interval);
+  }
+
+  startAutoplay();
+
+  // Hover'da durdur
+  const carousel = document.querySelector('.carousel-wrapper');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+  }
+})();
+
 // Teklif formu - WhatsApp
 function gonderWhatsapp() {
   const ad = document.getElementById('teklif-ad').value.trim();
