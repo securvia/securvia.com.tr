@@ -78,3 +78,49 @@ function gonderEmail() {
 
   window.location.href = `mailto:ramazan@securvia.com.tr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
+
+// Lightbox (fotoğraf büyütme)
+(function() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const imgs = document.querySelectorAll('.proje-img img');
+  let currentIdx = 0;
+
+  imgs.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      currentIdx = i;
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLB);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLB();
+  });
+
+  document.getElementById('lightboxPrev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIdx = (currentIdx - 1 + imgs.length) % imgs.length;
+    lightboxImg.src = imgs[currentIdx].src;
+  });
+
+  document.getElementById('lightboxNext').addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIdx = (currentIdx + 1) % imgs.length;
+    lightboxImg.src = imgs[currentIdx].src;
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+    if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+  });
+
+  function closeLB() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+})();

@@ -268,19 +268,9 @@ img {
   justify-content: center;
 }
 
-.hero-visual {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3cm;
-}
-
-.hero-logo-img {
-  width: 500px;
-  height: auto;
-  opacity: 0.92;
-  filter: drop-shadow(0 0 30px rgba(196, 149, 42, 0.3));
+.hero-centered .hero-text {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .badge-circle {
@@ -827,6 +817,167 @@ img {
   font-size: 0.82rem;
 }
 
+/* ===== REFERANSLARIMIZ ===== */
+.referanslar {
+  background: linear-gradient(135deg, #0a0a1e 0%, #1a1a3e 50%, #0d1b2a 100%);
+  padding: 5rem 0;
+}
+
+.referanslar .section-title {
+  color: #fff;
+}
+
+.referanslar .section-sub {
+  color: #aab0c0;
+}
+
+.proje-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2.5rem;
+}
+
+.proje-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.proje-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(196, 149, 42, 0.15);
+  border: 1px solid rgba(196, 149, 42, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C4952A;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.proje-header h3 {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.proje-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: #C4952A;
+  background: rgba(196, 149, 42, 0.12);
+  border: 1px solid rgba(196, 149, 42, 0.25);
+  padding: 0.2rem 0.7rem;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.proje-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+}
+
+.proje-img {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.proje-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.proje-img:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.lightbox-prev {
+  left: 1.5rem;
+}
+
+.lightbox-next {
+  right: 1.5rem;
+}
+
 /* ===== HEMEN TEKLİF AL ===== */
 .teklif {
   background: linear-gradient(135deg, #0a0a1e 0%, #1a1a3e 50%, #0d1b2a 100%);
@@ -1017,6 +1168,10 @@ img {
     font-size: 2rem;
   }
 
+  .proje-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .about-inner,
   .contact-inner {
     grid-template-columns: 1fr;
@@ -1036,6 +1191,15 @@ img {
 }
 
 @media (max-width: 680px) {
+  .proje-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .proje-card {
+    padding: 1.2rem;
+  }
+
   .menu-toggle {
     display: block;
   }
