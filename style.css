@@ -777,43 +777,75 @@ img {
 /* ===== FOOTER ===== */
 .footer {
   background: #0a0a1e;
-  padding: 3rem 0 0;
+  padding: 3.5rem 0 0;
 }
 
-.footer-inner {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-col {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding-bottom: 2rem;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-col h4 {
+  color: #C4952A;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
 }
 
 .footer .logo-sec {
   font-size: 1.5rem;
 }
 
-.footer p {
+.footer p,
+.footer-col a {
   color: #888;
   font-size: 0.85rem;
-  margin-top: 0.3rem;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.footer-links a {
-  color: #888;
-  font-size: 0.9rem;
+  margin-top: 0.2rem;
   transition: color 0.2s;
 }
 
-.footer-links a:hover {
+.footer-col a:hover {
   color: #C4952A;
+}
+
+.footer-col p i {
+  color: #C4952A;
+  width: 18px;
+  margin-right: 0.3rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.footer-social a:hover {
+  background: #C4952A;
+  color: #fff;
 }
 
 .footer-bottom {
@@ -827,165 +859,83 @@ img {
   font-size: 0.82rem;
 }
 
-/* ===== REFERANSLARIMIZ ===== */
-.referanslar {
-  background: linear-gradient(135deg, #0a0a1e 0%, #1a1a3e 50%, #0d1b2a 100%);
-  padding: 5rem 0;
-}
-
-.referanslar .section-title {
-  color: #fff;
-}
-
-.referanslar .section-sub {
-  color: #aab0c0;
-}
-
-.proje-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-top: 2.5rem;
-}
-
-.proje-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.proje-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(196, 149, 42, 0.15);
-  border: 1px solid rgba(196, 149, 42, 0.3);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #C4952A;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-
-.proje-header h3 {
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 0.15rem;
-}
-
-.proje-tag {
-  display: inline-block;
-  font-size: 0.78rem;
-  color: #C4952A;
-  background: rgba(196, 149, 42, 0.12);
-  border: 1px solid rgba(196, 149, 42, 0.25);
-  padding: 0.2rem 0.7rem;
-  border-radius: 100px;
-  font-weight: 600;
-}
-
-.proje-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.7rem;
-}
-
-.proje-img {
-  border-radius: 10px;
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  cursor: pointer;
-}
-
-.proje-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease, filter 0.35s ease;
-}
-
-.proje-img:hover img {
-  transform: scale(1.08);
-  filter: brightness(1.1);
-}
-
-/* Lightbox */
-.lightbox {
-  display: none;
+/* ===== SABİT WHATSAPP BUTONU ===== */
+.whatsapp-float {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.92);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  cursor: zoom-out;
-}
-
-.lightbox.active {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90vh;
-  border-radius: 12px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 2rem;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
   color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-
-.lightbox-close:hover {
-  opacity: 1;
-}
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 2.5rem;
-  cursor: pointer;
-  background: rgba(255,255,255,0.1);
-  border: none;
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 990;
+  transition: all 0.3s ease;
+  animation: whatsappPulse 2s infinite;
 }
 
-.lightbox-nav:hover {
-  background: rgba(255,255,255,0.2);
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
 }
 
-.lightbox-prev {
-  left: 1.5rem;
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.65); }
 }
 
-.lightbox-next {
-  right: 1.5rem;
+/* ===== YUKARI ÇIK BUTONU ===== */
+.scroll-top {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 5.5rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(10, 10, 30, 0.85);
+  color: #C4952A;
+  border: 1.5px solid rgba(196, 149, 42, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 990;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  background: #C4952A;
+  color: #fff;
+}
+
+/* ===== NAVBAR AKTİF LİNK ===== */
+.nav-active {
+  color: #C4952A !important;
+}
+
+/* ===== HİZMET KART HOVER ===== */
+.service-card {
+  transition: all 0.3s ease;
+  border: 1.5px solid transparent;
+}
+
+.service-card:hover {
+  border-color: rgba(196, 149, 42, 0.4);
+  box-shadow: 0 8px 30px rgba(196, 149, 42, 0.12);
+  transform: translateY(-4px) !important;
 }
 
 /* ===== HEMEN TEKLİF AL ===== */
@@ -1178,10 +1128,6 @@ img {
     font-size: 2rem;
   }
 
-  .proje-gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .about-inner,
   .contact-inner {
     grid-template-columns: 1fr;
@@ -1201,15 +1147,6 @@ img {
 }
 
 @media (max-width: 680px) {
-  .proje-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-
-  .proje-card {
-    padding: 1.2rem;
-  }
-
   .menu-toggle {
     display: block;
   }
@@ -1267,13 +1204,13 @@ img {
     font-size: 1.7rem;
   }
 
-  .footer-inner {
-    flex-direction: column;
-    align-items: center;
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     text-align: center;
   }
 
-  .footer-links {
+  .footer-social {
     justify-content: center;
   }
 }

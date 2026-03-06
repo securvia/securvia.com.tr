@@ -59,7 +59,7 @@ function gonderWhatsapp() {
   window.open(`https://wa.me/905533108840?text=${encodeURIComponent(text)}`, '_blank');
 }
 
-// Teklif formu - E-posta
+// Teklif formu - E-posta (mailto ile direkt mail uygulaması açılır)
 function gonderEmail() {
   const ad = document.getElementById('teklif-ad').value.trim();
   const tel = document.getElementById('teklif-tel').value.trim();
@@ -71,56 +71,72 @@ function gonderEmail() {
     return;
   }
 
-  const subject = `Teklif Talebi - ${hizmet || 'Genel'}`;
+  const subject = `Teklif Talebi - ${ad}`;
   let body = `Ad Soyad: ${ad}\nTelefon: ${tel}`;
   if (hizmet) body += `\nHizmet: ${hizmet}`;
-  if (mesaj) body += `\nMesaj: ${mesaj}`;
+  if (mesaj) body += `\n\nMesaj:\n${mesaj}`;
+  body += `\n\n--- Bu mesaj securvia.com.tr teklif formundan gönderilmiştir ---`;
 
   window.location.href = `mailto:ramazan@securvia.com.tr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-// Lightbox (fotoğraf büyütme)
-(function() {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const imgs = document.querySelectorAll('.proje-img img');
-  let currentIdx = 0;
-
-  imgs.forEach((img, i) => {
-    img.addEventListener('click', () => {
-      currentIdx = i;
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
+// Sayaç animasyonu (rakamlar ekrana gelince sayarak artar)
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.counted) {
+      entry.target.dataset.counted = 'true';
+      const target = entry.target.textContent.trim();
+      const isSlash = target.includes('/');
+      if (isSlash) return; // 7/24 olduğu gibi kalsın
+      const num = parseInt(target);
+      if (isNaN(num)) return;
+      let current = 0;
+      const step = Math.ceil(num / 50);
+      const suffix = target.replace(/[0-9]/g, '');
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= num) {
+          current = num;
+          clearInterval(timer);
+        }
+        entry.target.textContent = current + suffix;
+      }, 30);
+    }
   });
+}, { threshold: 0.5 });
 
-  document.getElementById('lightboxClose').addEventListener('click', closeLB);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLB();
-  });
+document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
 
-  document.getElementById('lightboxPrev').addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIdx = (currentIdx - 1 + imgs.length) % imgs.length;
-    lightboxImg.src = imgs[currentIdx].src;
-  });
-
-  document.getElementById('lightboxNext').addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIdx = (currentIdx + 1) % imgs.length;
-    lightboxImg.src = imgs[currentIdx].src;
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLB();
-    if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
-    if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
-  });
-
-  function closeLB() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
+// Yukarı çık butonu
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
   }
-})();
+});
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Navbar scroll spy (aktif bölümün linki vurgulanır)
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 200;
+    if (window.scrollY >= top) {
+      current = section.getAttribute('id');
+    }
+  });
+  navItems.forEach(link => {
+    link.classList.remove('nav-active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('nav-active');
+    }
+  });
+});
