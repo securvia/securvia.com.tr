@@ -59,6 +59,25 @@ function gonderWhatsapp() {
   window.open(`https://wa.me/905533108840?text=${encodeURIComponent(text)}`, '_blank');
 }
 
+// Toast bildirim göster
+function showToast(message, type) {
+  const existing = document.querySelector('.toast-msg');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'toast-msg toast-' + type;
+  toast.innerHTML = (type === 'success'
+    ? '<i class="fa-solid fa-circle-check"></i> '
+    : '<i class="fa-solid fa-circle-xmark"></i> ') + message;
+  document.body.appendChild(toast);
+
+  setTimeout(() => toast.classList.add('show'), 10);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 400);
+  }, 4000);
+}
+
 // Teklif formu - E-posta (Web3Forms ile direkt mail gönderir)
 async function gonderEmail() {
   const ad = document.getElementById('teklif-ad').value.trim();
@@ -67,7 +86,7 @@ async function gonderEmail() {
   const mesaj = document.getElementById('teklif-mesaj').value.trim();
 
   if (!ad || !tel) {
-    alert('Lütfen ad soyad ve telefon alanlarını doldurun.');
+    showToast('Lütfen ad soyad ve telefon alanlarını doldurun.', 'error');
     return;
   }
 
@@ -82,7 +101,7 @@ async function gonderEmail() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         access_key: '2475a7da-655f-4414-891c-0b9b62f19f73',
-        subject: `Teklif Talebi - ${ad}`,
+        subject: `Yeni Teklif Talebi - ${ad} - ${tel}`,
         from_name: 'Securvia Web Sitesi',
         name: ad,
         phone: tel,
@@ -92,13 +111,13 @@ async function gonderEmail() {
     });
     const data = await res.json();
     if (data.success) {
-      alert('Teklif talebiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+      showToast('E-posta başarıyla gönderildi! En kısa sürede dönüş yapacağız.', 'success');
       document.getElementById('teklifForm').reset();
     } else {
-      alert('Bir hata oluştu. Lütfen WhatsApp ile iletişime geçin.');
+      showToast('Gönderilemedi. Lütfen WhatsApp ile iletişime geçin.', 'error');
     }
   } catch (err) {
-    alert('Bağlantı hatası. Lütfen WhatsApp ile iletişime geçin.');
+    showToast('Bağlantı hatası. Lütfen WhatsApp ile iletişime geçin.', 'error');
   }
 
   btn.innerHTML = btnText;

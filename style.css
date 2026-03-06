@@ -921,6 +921,42 @@ img {
   color: #fff;
 }
 
+/* ===== TOAST BİLDİRİM ===== */
+.toast-msg {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  z-index: 10000;
+  opacity: 0;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  max-width: 90%;
+}
+
+.toast-msg.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast-success {
+  background: #1a8a4a;
+  color: #fff;
+}
+
+.toast-error {
+  background: #c0392b;
+  color: #fff;
+}
+
 /* ===== NAVBAR AKTİF LİNK ===== */
 .nav-active {
   color: #C4952A !important;
