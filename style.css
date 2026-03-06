@@ -122,9 +122,9 @@ img {
 }
 
 .logo-img {
-  height: 52px;
+  height: 72px;
   width: auto;
-  max-width: 260px;
+  max-width: 340px;
   object-fit: contain;
   filter: brightness(1.05) contrast(1.1);
 }
