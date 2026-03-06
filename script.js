@@ -59,8 +59,8 @@ function gonderWhatsapp() {
   window.open(`https://wa.me/905533108840?text=${encodeURIComponent(text)}`, '_blank');
 }
 
-// Teklif formu - E-posta (mailto ile direkt mail uygulaması açılır)
-function gonderEmail() {
+// Teklif formu - E-posta (Web3Forms ile direkt mail gönderir)
+async function gonderEmail() {
   const ad = document.getElementById('teklif-ad').value.trim();
   const tel = document.getElementById('teklif-tel').value.trim();
   const hizmet = document.getElementById('teklif-hizmet').value;
@@ -71,13 +71,38 @@ function gonderEmail() {
     return;
   }
 
-  const subject = `Teklif Talebi - ${ad}`;
-  let body = `Ad Soyad: ${ad}\nTelefon: ${tel}`;
-  if (hizmet) body += `\nHizmet: ${hizmet}`;
-  if (mesaj) body += `\n\nMesaj:\n${mesaj}`;
-  body += `\n\n--- Bu mesaj securvia.com.tr teklif formundan gönderilmiştir ---`;
+  const btn = document.querySelector('.teklif-btn-mail');
+  const btnText = btn.innerHTML;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gönderiliyor...';
+  btn.disabled = true;
 
-  window.location.href = `mailto:ramazan@securvia.com.tr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '2475a7da-655f-4414-891c-0b9b62f19f73',
+        subject: `Teklif Talebi - ${ad}`,
+        from_name: 'Securvia Web Sitesi',
+        name: ad,
+        phone: tel,
+        hizmet: hizmet || 'Belirtilmedi',
+        message: mesaj || 'Mesaj yok'
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      alert('Teklif talebiniz başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+      document.getElementById('teklifForm').reset();
+    } else {
+      alert('Bir hata oluştu. Lütfen WhatsApp ile iletişime geçin.');
+    }
+  } catch (err) {
+    alert('Bağlantı hatası. Lütfen WhatsApp ile iletişime geçin.');
+  }
+
+  btn.innerHTML = btnText;
+  btn.disabled = false;
 }
 
 // Sayaç animasyonu (rakamlar ekrana gelince sayarak artar)
