@@ -196,20 +196,28 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Lightbox (proje görselleri)
+// Lightbox (proje kartlari)
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxPrev = document.getElementById('lightboxPrev');
 const lightboxNext = document.getElementById('lightboxNext');
+const lightboxCounter = document.getElementById('lightboxCounter');
+const lightboxTitle = document.getElementById('lightboxTitle');
 let lightboxImages = [];
 let lightboxIndex = 0;
 
-document.querySelectorAll('.proje-img img').forEach((img, i) => {
-  lightboxImages.push(img.src);
-  img.addEventListener('click', () => {
-    lightboxIndex = i;
-    lightboxImg.src = lightboxImages[lightboxIndex];
+function updateLightbox() {
+  lightboxImg.src = lightboxImages[lightboxIndex];
+  lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + lightboxImages.length;
+}
+
+document.querySelectorAll('.proje-card[data-images]').forEach(card => {
+  card.addEventListener('click', () => {
+    lightboxImages = JSON.parse(card.getAttribute('data-images'));
+    lightboxIndex = 0;
+    lightboxTitle.textContent = card.getAttribute('data-title') || '';
+    updateLightbox();
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   });
@@ -223,16 +231,18 @@ if (lightboxClose) {
 }
 
 if (lightboxPrev) {
-  lightboxPrev.addEventListener('click', () => {
+  lightboxPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
     lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
-    lightboxImg.src = lightboxImages[lightboxIndex];
+    updateLightbox();
   });
 }
 
 if (lightboxNext) {
-  lightboxNext.addEventListener('click', () => {
+  lightboxNext.addEventListener('click', (e) => {
+    e.stopPropagation();
     lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
-    lightboxImg.src = lightboxImages[lightboxIndex];
+    updateLightbox();
   });
 }
 
