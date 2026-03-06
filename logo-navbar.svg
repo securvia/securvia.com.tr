@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 300 70" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield -->
+  <g transform="translate(8, 3)">
+    <path d="M 28,2 L 52,2 C 54,2 56,3 57,5 L 57,38 C 57,52 43,61 30,67 C 17,61 3,52 3,38 L 3,5 C 3,3 5,2 7,2 Z"
+          fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M 30,14 C 36,14 40,18 40,23 C 40,27 38,29 35,30 C 38,31 42,34 42,39 L 42,42 C 42,43 41,44 40,44 L 36,44 C 35,44 34,43 34,42 L 34,39 C 34,36 32,34 29,34 L 26,34 C 25,34 24,33 24,32 L 24,29 C 24,28 25,27 26,27 L 29,27 C 32,27 34,25 34,23 C 34,21 32,19 29,19 L 22,19 C 21,19 20,18 20,17 L 20,14 C 20,14 20,14 21,14 Z"
+          fill="url(#goldGrad)"/>
+  </g>
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c060"/>
+      <stop offset="50%" stop-color="#C4952A"/>
+      <stop offset="100%" stop-color="#A07820"/>
+    </linearGradient>
+  </defs>
+  <!-- SECURVIA text -->
+  <text x="78" y="32"
+        font-family="'Inter', 'Segoe UI', Arial, sans-serif"
+        font-size="26" font-weight="800" fill="#C4952A" letter-spacing="3.5">SECURVIA</text>
+  <!-- Subtitle -->
+  <text x="78" y="50"
+        font-family="'Inter', 'Segoe UI', Arial, sans-serif"
+        font-size="9.5" fill="#999999" letter-spacing="0.5" font-weight="400">G&#252;venlik ve Zay&#305;f Ak&#305;m Teknolojileri</text>
+</svg>

@@ -104,7 +104,7 @@ img {
   z-index: 999;
   background: rgba(10, 10, 30, 0.97);
   backdrop-filter: blur(10px);
-  padding: 0.9rem 0;
+  padding: 0.6rem 0;
   box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 
@@ -122,9 +122,9 @@ img {
 }
 
 .logo-img {
-  height: 138px;
+  height: 48px;
   width: auto;
-  max-width: 580px;
+  max-width: 240px;
   object-fit: contain;
 }
 
@@ -166,6 +166,7 @@ img {
   border-radius: 6px;
   font-weight: 700 !important;
   font-size: 0.9rem !important;
+  white-space: nowrap;
 }
 
 .nav-phone:hover {
