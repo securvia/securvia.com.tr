@@ -1,3 +1,14 @@
+// Preloader
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('hide');
+      setTimeout(() => preloader.remove(), 500);
+    }, 1500);
+  }
+});
+
 // Mobil menü toggle
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
@@ -184,3 +195,86 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Lightbox (proje görselleri)
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+document.querySelectorAll('.proje-img img').forEach((img, i) => {
+  lightboxImages.push(img.src);
+  img.addEventListener('click', () => {
+    lightboxIndex = i;
+    lightboxImg.src = lightboxImages[lightboxIndex];
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+}
+
+if (lightboxPrev) {
+  lightboxPrev.addEventListener('click', () => {
+    lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    lightboxImg.src = lightboxImages[lightboxIndex];
+  });
+}
+
+if (lightboxNext) {
+  lightboxNext.addEventListener('click', () => {
+    lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+    lightboxImg.src = lightboxImages[lightboxIndex];
+  });
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// FAQ Accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isActive = item.classList.contains('active');
+
+    document.querySelectorAll('.faq-item').forEach(fi => {
+      fi.classList.remove('active');
+      fi.querySelector('.faq-a').style.maxHeight = null;
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// Çerez bildirimi
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieAccept = document.getElementById('cookieAccept');
+
+if (cookieBanner && !localStorage.getItem('cookieAccepted')) {
+  setTimeout(() => cookieBanner.classList.add('show'), 2000);
+}
+
+if (cookieAccept) {
+  cookieAccept.addEventListener('click', () => {
+    localStorage.setItem('cookieAccepted', 'true');
+    cookieBanner.classList.remove('show');
+  });
+}

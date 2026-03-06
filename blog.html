@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Securvia Güvenlik Sistemleri</title>
+  <meta name="description" content="Güvenlik kamera sistemleri, görüntülü diyafon ve zayıf akım teknolojileri hakkında bilgilendirici yazılar." />
+  <link rel="icon" type="image/png" href="hh-transparent.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, #0a0a1e 0%, #1a1a3e 50%, #0d1b2a 100%);
+      padding: 10rem 0 4rem;
+      text-align: center;
+    }
+    .blog-hero h1 {
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .blog-hero p {
+      color: #aab0c0;
+      font-size: 1rem;
+    }
+    .blog-section {
+      padding: 4rem 0;
+      background: #f8f9fb;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 4px solid #C4952A;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(196,149,42,0.15);
+    }
+    .blog-card-body {
+      padding: 1.8rem;
+    }
+    .blog-card-tag {
+      display: inline-block;
+      background: rgba(196,149,42,0.12);
+      color: #C4952A;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .blog-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 0.7rem;
+      line-height: 1.4;
+    }
+    .blog-card p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .blog-card-meta {
+      font-size: 0.78rem;
+      color: #999;
+    }
+    .blog-soon {
+      text-align: center;
+      padding: 3rem;
+      color: #888;
+      font-size: 1rem;
+    }
+    .blog-soon i {
+      display: block;
+      font-size: 3rem;
+      color: #C4952A;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="hh-transparent.png" alt="Securvia Logo" class="logo-img" />
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#hizmetler">Hizmetler</a></li>
+        <li><a href="index.html#hakkimizda">Hakkimizda</a></li>
+        <li><a href="index.html#referanslar">Referanslar</a></li>
+        <li><a href="index.html#teklif">Teklif Al</a></li>
+        <li><a href="index.html#iletisim">Iletisim</a></li>
+        <li><a href="tel:05533108840" class="nav-phone">0553 310 88 40</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <div class="container">
+      <h1>Blog</h1>
+      <p>Guvenlik kamera sistemleri ve zayif akim teknolojileri hakkinda bilgilendirici yazilar.</p>
+    </div>
+  </section>
+
+  <!-- BLOG YAZILAR -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-card-tag">Guvenlik Kamerasi</span>
+            <h3>Ev ve Is Yeri Icin Guvenlik Kamerasi Secerken Dikkat Edilmesi Gerekenler</h3>
+            <p>Guvenlik kamerasi alirken dikkat etmeniz gereken teknik ozellikler, kamera turleri ve dogru kamera secimi icin ipuclari.</p>
+            <span class="blog-card-meta"><i class="fa-solid fa-calendar"></i> Yakin zamanda</span>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-card-tag">IP Kamera</span>
+            <h3>IP Kamera ile Analog Kamera Arasindaki Farklar Nelerdir?</h3>
+            <p>IP kamera ve analog kamera sistemlerinin avantajlari, dezavantajlari ve hangi durumda hangisinin tercih edilmesi gerektigi.</p>
+            <span class="blog-card-meta"><i class="fa-solid fa-calendar"></i> Yakin zamanda</span>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-card-body">
+            <span class="blog-card-tag">Goruntutu Diyafon</span>
+            <h3>Apartman Goruntutu Diyafon Sistemleri: Kurulum Rehberi</h3>
+            <p>Apartman ve site girislerinde goruntutu diyafon sistemi secimi, kurulum sureci ve dikkat edilmesi gereken noktalar.</p>
+            <span class="blog-card-meta"><i class="fa-solid fa-calendar"></i> Yakin zamanda</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="blog-soon">
+        <i class="fa-solid fa-pen-nib"></i>
+        <p>Yeni yazilar yakin zamanda eklenecektir. Takipte kalin!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <span class="logo-sec">SECURVIA</span>
+        <p>Guvenlik Sistemleri Zayif Akim Teknolojileri</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/securvia_guvenliksistemleri" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/905533108840" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:ramazan@securvia.com.tr" aria-label="E-Posta"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Hizli Linkler</h4>
+        <a href="index.html#hizmetler">Hizmetler</a>
+        <a href="index.html#hakkimizda">Hakkimizda</a>
+        <a href="index.html#teklif">Teklif Al</a>
+        <a href="index.html#iletisim">Iletisim</a>
+      </div>
+      <div class="footer-col">
+        <h4>Iletisim</h4>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:05533108840">0553 310 88 40</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:ramazan@securvia.com.tr">ramazan@securvia.com.tr</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> Aydinli Mah. Tulin Sok. 8a/17 Tuzla/Istanbul</p>
+      </div>
+      <div class="footer-col">
+        <h4>Calisma Saatleri</h4>
+        <p>Pazartesi - Cumartesi</p>
+        <p>08:00 - 19:00</p>
+        <p style="margin-top:0.5rem; color:#C4952A; font-weight:600;">Pazar: Kapali</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Securvia Guvenlik Sistemleri. Tum haklari saklidir.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/905533108840" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  </script>
+</body>
+</html>
