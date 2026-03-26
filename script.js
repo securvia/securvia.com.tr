@@ -124,6 +124,13 @@ async function gonderEmail() {
     if (data.success) {
       showToast('E-posta başarıyla gönderildi! En kısa sürede dönüş yapacağız.', 'success');
       document.getElementById('teklifForm').reset();
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18019807514/form_submit',
+          'event_category': 'contact',
+          'event_label': 'email_form'
+        });
+      }
     } else {
       showToast('Gönderilemedi. Lütfen WhatsApp ile iletişime geçin.', 'error');
     }
@@ -288,3 +295,29 @@ if (cookieAccept) {
     cookieBanner.classList.remove('show');
   });
 }
+
+// Google Ads Dönüşüm Takibi - Telefon tıklama
+document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18019807514/phone_click',
+        'event_category': 'contact',
+        'event_label': 'phone_click'
+      });
+    }
+  });
+});
+
+// Google Ads Dönüşüm Takibi - WhatsApp tıklama
+document.querySelectorAll('a[href*="wa.me"], .teklif-btn-wa').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18019807514/whatsapp_click',
+        'event_category': 'contact',
+        'event_label': 'whatsapp_click'
+      });
+    }
+  });
+});
