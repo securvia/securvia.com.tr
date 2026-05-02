@@ -9,24 +9,25 @@ window.addEventListener('load', () => {
   }
 });
 
-// Mobil menü toggle
+// Mobil menü toggle (null safe)
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-
-// Menü linkine tıklayınca menüyü kapat
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
   });
-});
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+}
 
 // Scroll'da navbar arka planını koyulaştır
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
   if (window.scrollY > 50) {
     navbar.style.background = 'rgba(10, 10, 30, 1)';
   } else {
@@ -321,3 +322,42 @@ document.querySelectorAll('a[href*="wa.me"], .teklif-btn-wa').forEach(link => {
     }
   });
 });
+
+
+// ── v3 Scroll-to-top + Fade-in animasyon ──────────────────────────────
+(function() {
+  // Scroll to top butonu (DOMContentLoaded sonrası ekle, herhangi bir sayfada)
+  if (!document.getElementById('scrollTop')) {
+    const btn = document.createElement('button');
+    btn.id = 'scrollTop';
+    btn.className = 'scroll-top';
+    btn.setAttribute('aria-label', 'Yukarı çık');
+    btn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    document.body.appendChild(btn);
+  }
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) scrollBtn.classList.add('visible');
+    else scrollBtn.classList.remove('visible');
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Fade-in animation on scroll (kartlar, why-card, stat, proje-card vs)
+  const targets = document.querySelectorAll('.service-card, .why-card, .stat, .proje-card, .testimonial, .blog-card, .lokasyon-card');
+  if ('IntersectionObserver' in window && targets.length) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    targets.forEach(el => {
+      el.classList.add('fade-in-init');
+      obs.observe(el);
+    });
+  }
+})();
