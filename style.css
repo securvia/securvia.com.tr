@@ -2292,9 +2292,11 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:foc
   filter: drop-shadow(0 2px 4px rgba(160,125,40,0.15));
 }
 
-svg.hero-icon {
+svg.hero-icon,
+img.hero-icon {
   width: 1em;
   height: 1em;
+  object-fit: contain;
 }
 
 .hero-icon-1 { top: 18%; left: 4%;   font-size: 6rem;   transform: rotate(-12deg); }
