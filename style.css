@@ -669,6 +669,69 @@ img {
   background: #fff;
 }
 
+.brands-marquee {
+  position: relative;
+  overflow: hidden;
+  margin: 2.5rem 0 3rem;
+  padding: 1.5rem 0;
+  background: linear-gradient(180deg, #f8f9fb 0%, #fff 100%);
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
+}
+
+.brands-marquee-track {
+  display: flex;
+  gap: 3.5rem;
+  width: max-content;
+  animation: brandsScroll 45s linear infinite;
+}
+
+.brands-marquee:hover .brands-marquee-track {
+  animation-play-state: paused;
+}
+
+.brands-marquee-item {
+  flex: 0 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+.brands-marquee-item img {
+  max-height: 100%;
+  max-width: 160px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+}
+
+.brands-marquee-item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+@keyframes brandsScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .brands-marquee-track { gap: 2.2rem; animation-duration: 35s; }
+  .brands-marquee-item { height: 44px; }
+  .brands-marquee-item img { max-width: 110px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands-marquee-track { animation: none; }
+}
+
 .brands-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
