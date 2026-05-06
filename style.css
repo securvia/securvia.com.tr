@@ -2299,8 +2299,8 @@ img.hero-icon {
   object-fit: contain;
 }
 
-.hero-icon-1 { top: 18%; left: 4%;   font-size: 6rem;   transform: rotate(-12deg); }
-.hero-icon-2 { top: 18%; right: 6%;  font-size: 6.2rem; transform: rotate(15deg); }
+.hero-icon-1 { top: 18%; right: 4%;  font-size: 6rem;   transform: rotate(12deg); }
+.hero-icon-2 { top: 18%; left: 6%;   font-size: 6.2rem; transform: rotate(-15deg); }
 .hero-icon-3 { top: 32%; right: 3%;  font-size: 4.8rem; transform: rotate(-20deg); }
 .hero-icon-4 { top: 36%; left: 3%;   font-size: 5.2rem; transform: rotate(18deg); }
 .hero-icon-5 { top: 60%; left: 8%;   font-size: 6.5rem; transform: rotate(-8deg); }
