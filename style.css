@@ -2248,13 +2248,68 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:foc
   text-align: center;
 }
 
-/* Hero üzerine ince altın "Damasc" dokusu */
+/* Hero - açık krem ton (premium beige) */
 .hero {
   background:
-    radial-gradient(circle at 15% 25%, rgba(212,169,51,.10), transparent 35%),
-    radial-gradient(circle at 85% 75%, rgba(212,169,51,.08), transparent 35%),
-    repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(212,169,51,.012) 18px, rgba(212,169,51,.012) 19px),
-    linear-gradient(135deg, #0a0a14 0%, #14142a 50%, #0d0d1a 100%) !important;
+    radial-gradient(circle at 15% 25%, rgba(212,169,51,.18), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(212,169,51,.14), transparent 40%),
+    repeating-linear-gradient(45deg, transparent, transparent 22px, rgba(160,125,40,.025) 22px, rgba(160,125,40,.025) 23px),
+    linear-gradient(135deg, #f5ecd6 0%, #ede1c4 50%, #e6d6b3 100%) !important;
+}
+
+.hero::before {
+  background: radial-gradient(ellipse at 70% 50%, rgba(212,169,51,0.12) 0%, transparent 60%) !important;
+}
+
+.hero-text h1 {
+  color: #2a2316 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.hero-text h1 span {
+  color: #a07d22 !important;
+}
+
+.hero-text p {
+  color: #5a4f3d !important;
+}
+
+/* Hero arka plan ikonları (subtle watermark pattern) */
+.hero-icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-icon {
+  position: absolute;
+  color: #D4A933;
+  opacity: 0.12;
+  display: block;
+  user-select: none;
+  filter: drop-shadow(0 2px 4px rgba(160,125,40,0.08));
+}
+
+.hero-icon-1 { top: 8%;  left: 4%;   font-size: 5.5rem; transform: rotate(-12deg); }
+.hero-icon-2 { top: 6%;  right: 6%;  font-size: 6rem;   transform: rotate(15deg); }
+.hero-icon-3 { top: 32%; right: 3%;  font-size: 4.5rem; transform: rotate(-20deg); }
+.hero-icon-4 { top: 36%; left: 3%;   font-size: 5rem;   transform: rotate(18deg); }
+.hero-icon-5 { top: 60%; left: 8%;   font-size: 6.5rem; transform: rotate(-8deg); }
+.hero-icon-6 { top: 65%; right: 7%;  font-size: 5.5rem; transform: rotate(22deg); }
+.hero-icon-7 { top: 18%; left: 30%;  font-size: 3.5rem; transform: rotate(-25deg); opacity: 0.08; }
+.hero-icon-8 { top: 75%; right: 32%; font-size: 4rem;   transform: rotate(10deg);  opacity: 0.08; }
+
+@media (max-width: 768px) {
+  .hero-icon-7, .hero-icon-8 { display: none; }
+  .hero-icon { font-size: 3rem !important; opacity: 0.08; }
+  .hero-icon-1 { top: 5%;  left: 4%; }
+  .hero-icon-2 { top: 5%;  right: 4%; }
+  .hero-icon-3 { top: 30%; right: 4%; }
+  .hero-icon-4 { top: 30%; left: 4%; }
+  .hero-icon-5 { top: 75%; left: 6%; }
+  .hero-icon-6 { top: 78%; right: 6%; }
 }
 
 /* Bölümler arası altın ince ışıltı çizgisi */
