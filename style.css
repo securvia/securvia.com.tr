@@ -669,69 +669,6 @@ img {
   background: #fff;
 }
 
-.brands-marquee {
-  position: relative;
-  overflow: hidden;
-  margin: 2.5rem 0 3rem;
-  padding: 1.5rem 0;
-  background: linear-gradient(180deg, #f8f9fb 0%, #fff 100%);
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
-          mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 60px), transparent 100%);
-}
-
-.brands-marquee-track {
-  display: flex;
-  gap: 3.5rem;
-  width: max-content;
-  animation: brandsScroll 45s linear infinite;
-}
-
-.brands-marquee:hover .brands-marquee-track {
-  animation-play-state: paused;
-}
-
-.brands-marquee-item {
-  flex: 0 0 auto;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.5rem;
-}
-
-.brands-marquee-item img {
-  max-height: 100%;
-  max-width: 160px;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.75;
-  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
-}
-
-.brands-marquee-item:hover img {
-  filter: grayscale(0);
-  opacity: 1;
-  transform: scale(1.06);
-}
-
-@keyframes brandsScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-@media (max-width: 768px) {
-  .brands-marquee-track { gap: 2.2rem; animation-duration: 35s; }
-  .brands-marquee-item { height: 44px; }
-  .brands-marquee-item img { max-width: 110px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brands-marquee-track { animation: none; }
-}
-
 .brands-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -782,27 +719,27 @@ img {
 
 .brands-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+  gap: 0.5rem;
 }
 
 .brand-tag {
   position: relative;
   background: #fff;
   border: 1px solid #e8e2d2;
-  border-radius: 12px;
-  height: 64px;
-  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  height: 46px;
+  padding: 0.35rem 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
   overflow: hidden;
 }
 
 .brand-tag img {
-  max-height: 38px;
+  max-height: 26px;
   max-width: 100%;
   width: auto;
   object-fit: contain;
@@ -812,26 +749,16 @@ img {
 
 .brand-tag:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(196,149,42,0.18);
+  box-shadow: 0 5px 14px rgba(196,149,42,0.18);
   border-color: #D4A933;
 }
 
 .brand-tag:hover img {
-  transform: scale(1.06);
-}
-
-.brand-tag-dark {
-  background: #1a1a1e;
-  border-color: #2a2a30;
-}
-
-.brand-tag-dark:hover {
-  border-color: #D4A933;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  transform: scale(1.08);
 }
 
 .brand-tag-text {
-  font-size: 0.92rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: #1a1a2e;
   letter-spacing: 0.2px;
@@ -840,11 +767,12 @@ img {
 
 @media (max-width: 480px) {
   .brands-list {
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.4rem;
   }
-  .brand-tag { height: 54px; }
-  .brand-tag img { max-height: 30px; }
+  .brand-tag { height: 40px; }
+  .brand-tag img { max-height: 22px; }
+  .brand-tag-text { font-size: 0.7rem; }
 }
 
 /* ===== CONTACT ===== */
