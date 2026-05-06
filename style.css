@@ -2285,11 +2285,11 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:foc
 
 .hero-icon {
   position: absolute;
-  color: #D4A933;
-  opacity: 0.18;
+  color: #b8881e;
+  opacity: 0.28;
   display: block;
   user-select: none;
-  filter: drop-shadow(0 2px 4px rgba(160,125,40,0.10));
+  filter: drop-shadow(0 2px 4px rgba(160,125,40,0.15));
 }
 
 svg.hero-icon {
