@@ -757,6 +757,10 @@ img {
   transform: scale(1.08);
 }
 
+.brand-tag-square img {
+  max-height: 38px;
+}
+
 .brand-tag-text {
   font-size: 0.78rem;
   font-weight: 700;
@@ -772,6 +776,7 @@ img {
   }
   .brand-tag { height: 40px; }
   .brand-tag img { max-height: 22px; }
+  .brand-tag-square img { max-height: 32px; }
   .brand-tag-text { font-size: 0.7rem; }
 }
 
