@@ -2286,24 +2286,29 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:foc
 .hero-icon {
   position: absolute;
   color: #D4A933;
-  opacity: 0.12;
+  opacity: 0.18;
   display: block;
   user-select: none;
-  filter: drop-shadow(0 2px 4px rgba(160,125,40,0.08));
+  filter: drop-shadow(0 2px 4px rgba(160,125,40,0.10));
 }
 
-.hero-icon-1 { top: 8%;  left: 4%;   font-size: 5.5rem; transform: rotate(-12deg); }
-.hero-icon-2 { top: 6%;  right: 6%;  font-size: 6rem;   transform: rotate(15deg); }
-.hero-icon-3 { top: 32%; right: 3%;  font-size: 4.5rem; transform: rotate(-20deg); }
-.hero-icon-4 { top: 36%; left: 3%;   font-size: 5rem;   transform: rotate(18deg); }
+svg.hero-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.hero-icon-1 { top: 8%;  left: 4%;   font-size: 6rem;   transform: rotate(-12deg); }
+.hero-icon-2 { top: 6%;  right: 6%;  font-size: 6.2rem; transform: rotate(15deg); }
+.hero-icon-3 { top: 32%; right: 3%;  font-size: 4.8rem; transform: rotate(-20deg); }
+.hero-icon-4 { top: 36%; left: 3%;   font-size: 5.2rem; transform: rotate(18deg); }
 .hero-icon-5 { top: 60%; left: 8%;   font-size: 6.5rem; transform: rotate(-8deg); }
 .hero-icon-6 { top: 65%; right: 7%;  font-size: 5.5rem; transform: rotate(22deg); }
-.hero-icon-7 { top: 18%; left: 30%;  font-size: 3.5rem; transform: rotate(-25deg); opacity: 0.08; }
-.hero-icon-8 { top: 75%; right: 32%; font-size: 4rem;   transform: rotate(10deg);  opacity: 0.08; }
+.hero-icon-7 { top: 18%; left: 30%;  font-size: 4rem;   transform: rotate(-25deg); opacity: 0.13; }
+.hero-icon-8 { top: 75%; right: 32%; font-size: 4rem;   transform: rotate(10deg);  opacity: 0.13; }
 
 @media (max-width: 768px) {
   .hero-icon-7, .hero-icon-8 { display: none; }
-  .hero-icon { font-size: 3rem !important; opacity: 0.08; }
+  .hero-icon { font-size: 3.2rem !important; opacity: 0.14; }
   .hero-icon-1 { top: 5%;  left: 4%; }
   .hero-icon-2 { top: 5%;  right: 4%; }
   .hero-icon-3 { top: 30%; right: 4%; }
