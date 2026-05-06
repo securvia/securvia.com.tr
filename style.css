@@ -2254,7 +2254,7 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:foc
     radial-gradient(circle at 15% 25%, rgba(212,169,51,.18), transparent 40%),
     radial-gradient(circle at 85% 75%, rgba(212,169,51,.14), transparent 40%),
     repeating-linear-gradient(45deg, transparent, transparent 22px, rgba(160,125,40,.025) 22px, rgba(160,125,40,.025) 23px),
-    linear-gradient(135deg, #f5ecd6 0%, #ede1c4 50%, #e6d6b3 100%) !important;
+    linear-gradient(135deg, #FBF8F0 0%, #F8F2E2 50%, #F2EAD0 100%) !important;
 }
 
 .hero::before {
