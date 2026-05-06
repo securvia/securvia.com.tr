@@ -2274,6 +2274,20 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus, textarea:foc
   color: #5a4f3d !important;
 }
 
+/* Hero outline butonu krem zemine uyumlu (gold border + koyu text) */
+.hero .btn-outline {
+  color: #2a2316 !important;
+  border-color: #b8881e !important;
+  background: rgba(255,255,255,0.45) !important;
+  font-weight: 700;
+}
+
+.hero .btn-outline:hover {
+  background: #b8881e !important;
+  color: #fff !important;
+  border-color: #b8881e !important;
+}
+
 /* Hero arka plan ikonları (subtle watermark pattern) */
 .hero-icons {
   position: absolute;
